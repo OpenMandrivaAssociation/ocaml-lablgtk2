@@ -65,4 +65,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_bindir}/*
 %{ocaml_sitelib}/lablgtk2/*
-%exclude %{ocaml_sitelib}/lablgtk2/*.cmii
+%exclude %{ocaml_sitelib}/lablgtk2/*.cmi
