@@ -45,6 +45,8 @@ make opt
 rm -rf %{buildroot}
 install -d -m 755 %{buildroot}%{_bindir}
 install -d -m 755 %{buildroot}%{ocaml_sitelib}/stublibs
+install -d -m 755 %{buildroot}%{ocaml_sitelib}/lablgtk2/
+install -m 644 META %{buildroot}%{ocaml_sitelib}/lablgtk2/
 make install \
 	BINDIR=%{buildroot}%{_bindir} \
 	INSTALLDIR=%{buildroot}%{ocaml_sitelib}/lablgtk2 \
@@ -64,4 +66,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_bindir}/*
 %{ocaml_sitelib}/lablgtk2/*
-%exclude %{ocaml_sitelib}/lablgtk2/*.cmi
+%exclude %{ocaml_sitelib}/lablgtk2/*.cmii
