@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
 %define version		2.10.0
-%define release		%mkrel 1
+%define release		%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
@@ -44,14 +44,11 @@ make opt
 %install
 rm -rf %{buildroot}
 install -d -m 755 %{buildroot}%{_bindir}
-install -d -m 755 %{buildroot}%{_libdir}/ocaml/stublibs
-install -d -m 755 %{buildroot}%{ocaml_sitelib}/lablgtk2
-install -m 644 META %{buildroot}%{ocaml_sitelib}/lablgtk2/
+install -d -m 755 %{buildroot}%{ocaml_sitelib}/stublibs
 make install \
-        BINDIR=%{buildroot}%{_bindir} \
-        INSTALLDIR=%{buildroot}%{_libdir}/ocaml/lablgtk2 \
-        DLLDIR=%{buildroot}%{_libdir}/ocaml/stublibs
-
+	BINDIR=%{buildroot}%{_bindir} \
+	INSTALLDIR=%{buildroot}%{ocaml_sitelib}/lablgtk2 \
+	DLLDIR=%{buildroot}%{ocaml_sitelib}/stublibs
 
 %clean
 rm -rf %{buildroot}
@@ -59,14 +56,12 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc COPYING CHANGES README
-%dir %{_libdir}/ocaml/lablgtk2
-%{_libdir}/ocaml/lablgtk2/*.cmi
-%{_libdir}/ocaml/stublibs/*
-%{ocaml_sitelib}/lablgtk2
+%dir %{ocaml_sitelib}/lablgtk2
+%{ocaml_sitelib}/lablgtk2/*.cmi
+%{ocaml_sitelib}/stublibs/*
 
 %files devel
 %defattr(-,root,root)
 %{_bindir}/*
-%{_libdir}/ocaml/lablgtk2/*
-%exclude %{_libdir}/ocaml/lablgtk2/*.cmi
-
+%{ocaml_sitelib}/lablgtk2/*
+%exclude %{ocaml_sitelib}/lablgtk2/*.cmi
