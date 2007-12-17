@@ -18,7 +18,6 @@ BuildRequires:	librsvg-devel
 BuildRequires:	gnomeui2-devel	
 BuildRequires:	gnome-panel-devel
 BuildRequires:	gtkspell-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 OCaml interface to the GIMP Tool Kit Version 2.
