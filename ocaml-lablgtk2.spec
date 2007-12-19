@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
 %define version		2.10.0
-%define release		%mkrel 3
+%define release		%mkrel 4
 
 Name:		%{name}
 Version:	%{version}
@@ -34,6 +34,7 @@ using %{name}.
 
 %prep
 %setup -q -n %{base_name}-%{version}
+perl -pi -e "s/^directory.*$//" META
 
 %build
 ./configure
