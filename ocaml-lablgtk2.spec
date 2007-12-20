@@ -1,13 +1,14 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
 %define version		2.10.0
-%define release		%mkrel 4
+%define release		%mkrel 5
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
 Source:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.gz
+Patch0:		lablgtk-2.10.0.patch
 URL:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
 License:	LGPL
 Group:		Development/Other
@@ -34,6 +35,7 @@ using %{name}.
 
 %prep
 %setup -q -n %{base_name}-%{version}
+%patch0 -p0
 perl -pi -e "s/^directory.*$//" META
 
 %build
