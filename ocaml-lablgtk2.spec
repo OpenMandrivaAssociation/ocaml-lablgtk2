@@ -44,14 +44,14 @@ make opt
 
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}%{_bindir}
-install -d -m 755 %{buildroot}%{ocaml_sitelib}/stublibs
-install -d -m 755 %{buildroot}%{ocaml_sitelib}/lablgtk2/
-install -m 644 META %{buildroot}%{ocaml_sitelib}/lablgtk2/
+install -d -m 755 %{buildroot}/%{_bindir}
+install -d -m 755 %{buildroot}/%{_libdir}/ocaml/stublibs
+install -d -m 755 %{buildroot}/%{_libdir}/ocaml/lablgtk2/
+install -m 644 META %{buildroot}/%{_libdir}/ocaml/lablgtk2/
 make install \
-	BINDIR=%{buildroot}%{_bindir} \
-	INSTALLDIR=%{buildroot}%{ocaml_sitelib}/lablgtk2 \
-	DLLDIR=%{buildroot}%{ocaml_sitelib}/stublibs
+	BINDIR=%{buildroot}/%{_bindir} \
+	INSTALLDIR=%{buildroot}/%{_libdir}/ocaml/lablgtk2 \
+	DLLDIR=%{buildroot}/%{_libdir}/ocaml/stublibs
 
 %clean
 rm -rf %{buildroot}
@@ -59,12 +59,20 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc COPYING CHANGES README
-%dir %{ocaml_sitelib}/lablgtk2
-%{ocaml_sitelib}/lablgtk2/*.cmi
-%{ocaml_sitelib}/stublibs/*
+%{_bindir}/*
+%dir %{_libdir}/ocaml/lablgtk2
+%{_libdir}/ocaml/lablgtk2/META
+%{_libdir}/ocaml/lablgtk2/*.cmi
+%{_libdir}/ocaml/lablgtk2/*.cma
+%{_libdir}/ocaml/lablgtk2/*.cmo
+%{_libdir}/ocaml/lablgtk2/*.o
+%{_libdir}/ocaml/stublibs/*
 
 %files devel
 %defattr(-,root,root)
-%{_bindir}/*
-%{ocaml_sitelib}/lablgtk2/*
-%exclude %{ocaml_sitelib}/lablgtk2/*.cmi
+%{_libdir}/ocaml/lablgtk2/*
+%exclude %{_libdir}/ocaml/lablgtk2/META
+%exclude %{_libdir}/ocaml/lablgtk2/*.cmi
+%exclude %{_libdir}/ocaml/lablgtk2/*.cma
+%exclude %{_libdir}/ocaml/lablgtk2/*.cmo
+%exclude %{_libdir}/ocaml/lablgtk2/*.o
