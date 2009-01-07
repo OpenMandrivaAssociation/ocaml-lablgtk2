@@ -9,6 +9,7 @@ Release:	%{release}
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
 Source:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.bz2
 URL:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
+Patch0:         lablgtk-2.10.1_libgnomeui_include.patch
 License:	LGPL
 Group:		Development/Other
 BuildRequires:	camlp4
@@ -35,6 +36,7 @@ using %{name}.
 
 %prep
 %setup -q -n %{base_name}-%{version}
+%patch0 -p1
 perl -pi -e "s/^directory.*$//" META
 
 %build
