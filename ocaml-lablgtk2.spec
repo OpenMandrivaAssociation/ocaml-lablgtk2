@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
 %define version		2.12.0
-%define release		%mkrel 5
+%define release		%mkrel 6
 
 Name:		%{name}
 Version:	%{version}
@@ -19,6 +19,7 @@ BuildRequires:	librsvg-devel
 BuildRequires:	gnomeui2-devel	
 BuildRequires:	gnome-panel-devel
 BuildRequires:	gtkspell-devel
+BuildRequires:	libglade2-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
