@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
 %define version		2.12.0
-%define release		%mkrel 7
+%define release		%mkrel 8
 
 Name:		%{name}
 Version:	%{version}
@@ -19,7 +19,7 @@ BuildRequires:	gnomeui2-devel
 BuildRequires:	gnome-panel-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	libglade2-devel
-BuildRequires:	gtksourceview-devel
+BuildRequires:	libgtksourceview-1.0-devel
 BuildRequires:	gtkglarea2-devel
 BuildRequires:	ocaml-lablgl-devel
 BuildRequires:  Mesa-common-devel
