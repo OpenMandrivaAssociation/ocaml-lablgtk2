@@ -20,6 +20,8 @@ BuildRequires:	gnomeui2-devel
 BuildRequires:	gnome-panel-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	libglade2-devel
+BuildRequires:	gtksourceview-devel
+BuildRequires:	ocaml-lablgl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
