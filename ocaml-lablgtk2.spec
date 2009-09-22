@@ -14,14 +14,15 @@ License:	LGPL
 Group:		Development/Other
 BuildRequires:	camlp4
 BuildRequires:	gtk+2-devel
-BuildRequires:	gtkglarea2-devel
 BuildRequires:	librsvg-devel
 BuildRequires:	gnomeui2-devel	
 BuildRequires:	gnome-panel-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	libglade2-devel
 BuildRequires:	gtksourceview-devel
+BuildRequires:	gtkglarea2-devel
 BuildRequires:	ocaml-lablgl-devel
+BuildRequires:  Mesa-common-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
