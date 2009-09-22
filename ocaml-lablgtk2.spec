@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
 %define version		2.12.0
-%define release		%mkrel 6
+%define release		%mkrel 7
 
 Name:		%{name}
 Version:	%{version}
