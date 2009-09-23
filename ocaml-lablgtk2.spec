@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
 %define version		2.12.0
-%define release		%mkrel 8
+%define release		%mkrel 9
 
 Name:		%{name}
 Version:	%{version}
@@ -42,6 +42,7 @@ using %{name}.
 %setup -q -n %{base_name}-%{version}
 %patch0 -p1
 perl -pi -e "s/^directory.*$//" META
+sed -i -e 's/version="2.10.1"/version="%{version}"/' META
 
 %build
 ./configure
@@ -76,6 +77,7 @@ rm -rf %{buildroot}
 
 %files devel
 %defattr(-,root,root)
+%doc examples
 %{_libdir}/ocaml/lablgtk2/*
 %exclude %{_libdir}/ocaml/lablgtk2/META
 %exclude %{_libdir}/ocaml/lablgtk2/*.cmi
