@@ -1,13 +1,14 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
 %define version		2.14.0
-%define release		%mkrel 1
+%define release		%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
-Source:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.gz
+Source0:	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.gz
+Source1:	lablgtk-2.14.0-doc-html.tar.lzma
 URL:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
 License:	LGPL
 Group:		Development/Other
@@ -38,10 +39,21 @@ Requires:	gtk2-devel
 This package contains the development files needed to build applications
 using %{name}.
 
+%package doc
+Summary:	Documentation and examples for %{name}
+Group:		Development/Other
+
+%description doc
+This package contains the ocamldoc generated documentation for %{name},
+and some examples.
+
+
 %prep
 %setup -q -n %{base_name}-%{version}
 perl -pi -e "s/^directory.*$//" META
 sed -i -e 's/version="2.12.0"/version="%{version}"/' META
+lzcat %{SOURCE1} | tar xf -
+mv lablgtk-2.14.0-doc-html/ doc/
 
 %build
 ./configure
@@ -76,10 +88,15 @@ rm -rf %{buildroot}
 
 %files devel
 %defattr(-,root,root)
-%doc examples
 %{_libdir}/ocaml/lablgtk2/*
 %exclude %{_libdir}/ocaml/lablgtk2/META
 %exclude %{_libdir}/ocaml/lablgtk2/*.cmi
 %exclude %{_libdir}/ocaml/lablgtk2/*.cma
 %exclude %{_libdir}/ocaml/lablgtk2/*.cmo
 %exclude %{_libdir}/ocaml/lablgtk2/*.o
+
+%files doc
+%defattr(-,root,root)
+%doc examples
+%doc doc
+
