@@ -1,15 +1,14 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
-%define version		2.12.0
-%define release		%mkrel 9
+%define version		2.14.0
+%define release		%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
-Source:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.bz2
+Source:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.gz
 URL:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
-Patch0:         lablgtk-2.10.1_libgnomeui_include.patch
 License:	LGPL
 Group:		Development/Other
 BuildRequires:	camlp4
@@ -20,6 +19,7 @@ BuildRequires:	gnome-panel-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:	libglade2-devel
 BuildRequires:	libgtksourceview-1.0-devel
+BuildRequires:	libgtksourceview-2.0-devel
 BuildRequires:	gtkglarea2-devel
 BuildRequires:	ocaml-lablgl-devel
 BuildRequires:  Mesa-common-devel
@@ -40,9 +40,8 @@ using %{name}.
 
 %prep
 %setup -q -n %{base_name}-%{version}
-%patch0 -p1
 perl -pi -e "s/^directory.*$//" META
-sed -i -e 's/version="2.10.1"/version="%{version}"/' META
+sed -i -e 's/version="2.12.0"/version="%{version}"/' META
 
 %build
 ./configure
