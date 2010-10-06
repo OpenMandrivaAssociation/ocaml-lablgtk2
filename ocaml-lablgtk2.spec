@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
-%define version		2.14.0
-%define release		%mkrel 2
+%define version		2.14.2
+%define release		%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -56,7 +56,7 @@ lzcat %{SOURCE1} | tar xf -
 mv lablgtk-2.14.0-doc-html/ doc/
 
 %build
-./configure
+%configure2_5x
 make
 make opt
 
