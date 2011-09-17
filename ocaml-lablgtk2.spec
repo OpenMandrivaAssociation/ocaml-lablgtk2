@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}2
 %define version		2.14.2
-%define release		2
+%define release		3
 
 Name:		%{name}
 Version:	%{version}
@@ -70,6 +70,10 @@ make install \
 	BINDIR=%{buildroot}/%{_bindir} \
 	INSTALLDIR=%{buildroot}/%{_libdir}/ocaml/lablgtk2 \
 	DLLDIR=%{buildroot}/%{_libdir}/ocaml/stublibs
+
+for cmo in $(find src/ -type f -name "*.cmo"); do
+	%{__install} -m0644 -D $cmo %{buildroot}/%{_libdir}/ocaml/lablgtk2/`basename $cmo`
+done;
 
 %clean
 rm -rf %{buildroot}
