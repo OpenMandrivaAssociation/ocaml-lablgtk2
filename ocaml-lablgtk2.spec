@@ -1,30 +1,26 @@
-%define base_name	lablgtk
-%define name		ocaml-%{base_name}2
-%define version		2.14.2
-%define release		3
+%define base_name lablgtk
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		ocaml-%{base_name}2
+Version:	2.14.2
+Release:	4
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
 Source0:	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.gz
 Source1:	lablgtk-2.14.0-doc-html.tar.lzma
-URL:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
+URL:		http://lablgtk.forge.ocamlcore.org/
 License:	LGPL
 Group:		Development/Other
 BuildRequires:	camlp4
-BuildRequires:	gtk+2-devel
-BuildRequires:	librsvg-devel
-BuildRequires:	gnomeui2-devel	
-BuildRequires:	gnome-panel-devel
-BuildRequires:	gtkspell-devel
-BuildRequires:	libglade2-devel
-BuildRequires:	libgtksourceview-1.0-devel
-BuildRequires:	libgtksourceview-2.0-devel
-BuildRequires:	gtkglarea2-devel
+BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(librsvg-2.0)
+BuildRequires:	pkgconfig(libgnomeui-2.0)
+BuildRequires:	pkgconfig(libpanelapplet-4.0)
+BuildRequires:	pkgconfig(gtkspell-2.0)
+BuildRequires:	pkgconfig(libglade-2.0)
+BuildRequires:	pkgconfig(gtksourceview-1.0)
+BuildRequires:	pkgconfig(gtksourceview-2.0)
+BuildRequires:	pkgconfig(gtkgl-2.0)
 BuildRequires:	ocaml-lablgl-devel
-BuildRequires:  Mesa-common-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:  mesa-common-devel
 
 %description
 OCaml interface to the GIMP Tool Kit Version 2.
@@ -103,4 +99,3 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc examples
 %doc doc
-
