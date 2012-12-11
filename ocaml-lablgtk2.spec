@@ -99,3 +99,147 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc examples
 %doc doc
+
+
+%changelog
+* Fri Jun 08 2012 Bernhard Rosenkraenzer <bero@bero.eu> 2.14.2-4
++ Revision: 803316
+- Fix build in current environment
+- Don't BuildRequire 32bit libraries on x86_64
+- Clean up spec file
+
+* Sat Sep 17 2011 Alexandre Lissy <alissy@mandriva.com> 2.14.2-3
++ Revision: 700156
+- Installing .cmo files, pango.cmo at least is needed by ocaml-cairo
+- Release bump, rebuilding for latest ocaml release
+
+* Wed Oct 06 2010 Funda Wang <fwang@mandriva.org> 2.14.2-1mdv2011.0
++ Revision: 583596
+- New version 2.14.2
+
+* Fri Sep 25 2009 Florent Monnier <blue_prawn@mandriva.org> 2.14.0-2mdv2010.0
++ Revision: 449212
+- added the documentation
+
+* Fri Sep 25 2009 Florent Monnier <blue_prawn@mandriva.org> 2.14.0-1mdv2010.0
++ Revision: 449176
+- new version 2.14.0
+- new version 2.14.0
+
+* Wed Sep 23 2009 Florent Monnier <blue_prawn@mandriva.org> 2.12.0-9mdv2010.0
++ Revision: 447866
+- included the examples, and corrected the version in the META file
+
+* Wed Sep 23 2009 Florent Monnier <blue_prawn@mandriva.org> 2.12.0-8mdv2010.0
++ Revision: 447566
+- the gtksourceview module requires version 1.0 of the lib, 2.0 is in the svn
+
+* Tue Sep 22 2009 Florent Monnier <blue_prawn@mandriva.org> 2.12.0-7mdv2010.0
++ Revision: 447521
+- fixed gtkglarea deps
+- BuildRequires: gtksourceview-devel and BuildRequires: ocaml-lablgl-devel
+
+* Mon Jul 27 2009 Florent Monnier <blue_prawn@mandriva.org> 2.12.0-6mdv2010.0
++ Revision: 400484
+- corrected libglade dependency
+
+* Sat Jun 27 2009 Guillaume Rousse <guillomovitch@mandriva.org> 2.12.0-5mdv2010.0
++ Revision: 390044
+- rebuild
+- rebuild
+
+* Wed Jan 07 2009 Florent Monnier <blue_prawn@mandriva.org> 2.12.0-3mdv2009.1
++ Revision: 326787
+- sources for lablgtk-2.10.1
+- new version lablgtk-2.10.1
+- patch to add an include for libgnomeui
+- fixed a header include for libgnomeui
+- move non-devel files in main package
+- site-lib hierarchy doesn't exist anymore
+
+* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 2.10.1-3mdv2009.0
++ Revision: 254266
+- rebuild
+
+* Mon Mar 03 2008 Stefan van der Eijk <stefan@mandriva.org> 2.10.1-1mdv2008.1
++ Revision: 178128
+- 2.10.1
+- rebuild for ocaml
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Thu Dec 20 2007 Guillaume Bedot <littletux@mandriva.org> 2.10.0-5mdv2008.1
++ Revision: 135369
+- patch fixing locale issues
+
+* Wed Dec 19 2007 Guillaume Bedot <littletux@mandriva.org> 2.10.0-4mdv2008.1
++ Revision: 133742
+- fix META file.
+
+* Mon Dec 17 2007 Guillaume Bedot <littletux@mandriva.org> 2.10.0-3mdv2008.1
++ Revision: 131036
+- also include META so ocamlfind works
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Mon Dec 17 2007 Guillaume Bedot <littletux@mandriva.org> 2.10.0-2mdv2008.1
++ Revision: 123007
+- back to ocaml policy compliance
+
+* Fri Nov 30 2007 Guillaume Bedot <littletux@mandriva.org> 2.10.0-1mdv2008.1
++ Revision: 114195
+- 2.10.0
+- fixed location of caml archives
+
+* Sat Sep 01 2007 Guillaume Rousse <guillomovitch@mandriva.org> 2.6.0-10mdv2008.0
++ Revision: 77689
+- ocaml policy compliance
+
+
+* Thu Jan 25 2007 Guillaume Rousse <guillomovitch@mandriva.org> 2.6.0-9mdv2007.0
++ Revision: 113157
+- rebuild for new ocaml
+- Import ocaml-lablgtk2
+
+* Tue Aug 29 2006 Guillaume Rousse <guillomovitch@mandriva.org> 2.6.0-8mdv2007.0
+- Rebuild
+
+* Wed Apr 26 2006 Pixel <pixel@mandriva.com> 2.6.0-7mdk
+- rebuild for new ocaml
+
+* Thu Jan 26 2006 Pixel <pixel@mandriva.com> 2.6.0-6mdk
+- only the stublibs are non-devel stuff (ie not requiring ocaml)
+
+* Mon Jan 23 2006 Pixel <pixel@mandriva.com> 2.6.0-5mdk
+- rebuild for new ocaml
+
+* Fri Jan 13 2006 Guillaume Rousse <guillomovitch@mandriva.org> 2.6.0-4mdk
+- devel packages requires gtk+2-devel
+
+* Wed Nov 09 2005 Guillaume Bedot <littletux@mandriva.org> 2.6.0-3mdk
+- rebuild for new lablgl
+
+* Mon Nov 07 2005 Pixel <pixel@mandriva.com> 2.6.0-2mdk
+- rebuild for new ocaml
+
+* Wed Nov 02 2005 Guillaume Rousse <guillomovitch@mandriva.org> 2.6.0-1mdk
+- %%mkrel
+- Anssi Hannula <anssi.hannula@gmail.com>
+ - 2.6.0
+
+* Tue Nov 01 2005 Frederic Lepied <flepied@mandriva.com> 2.4.1-0.20050701.2mdk
+- rebuild to compile gtkgl support
+
+* Wed Jul 20 2005 Guillaume Rousse <guillomovitch@mandriva.org> 2.4.1-0.20050701.1mdk 
+- new snapshot
+- more buildrequires
+- remove merged rpm macros
+
+* Wed May 18 2005 Laurent Culioli <laurent@mandriva.org> 2.4.1-0.20050218.1mdk
+- 20050218
+
+* Fri Apr 22 2005 Guillaume Rousse <guillomovitch@mandriva.org> 2.4.0-1mdk 
+- contributed by Julien Narboux (Julien.Narboux@inria.fr)
+
