@@ -59,12 +59,16 @@ make opt
 
 %install
 rm -rf %{buildroot}
+export DESTDIR=%{buildroot}
+export OCAMLFIND_DESTDIR=%{buildroot}%{_libdir}/ocmal
 install -d -m 755 %{buildroot}/%{_bindir}
 install -d -m 755 %{buildroot}/%{_libdir}/ocaml/stublibs
 install -d -m 755 %{buildroot}/%{_libdir}/ocaml/lablgtk2/
 install -m 644 META %{buildroot}/%{_libdir}/ocaml/lablgtk2/
 make install \
+	RANLIB=true \
 	BINDIR=%{buildroot}/%{_bindir} \
+	LIBDIR=%{buildroot}/%{_libdir}/ocaml/lablgtk2 \
 	INSTALLDIR=%{buildroot}/%{_libdir}/ocaml/lablgtk2 \
 	DLLDIR=%{buildroot}/%{_libdir}/ocaml/stublibs
 
