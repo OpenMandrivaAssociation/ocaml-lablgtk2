@@ -1,7 +1,7 @@
 %define base_name lablgtk
 
 Name:		ocaml-%{base_name}2
-Version:	2.14.2
+Version:	2.16.0
 Release:	4
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
 Source0:	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.gz
