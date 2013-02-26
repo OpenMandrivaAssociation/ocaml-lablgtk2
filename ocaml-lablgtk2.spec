@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig(gtksourceview-2.0)
 BuildRequires:	pkgconfig(gtkgl-2.0)
 BuildRequires:	ocaml-lablgl-devel
 BuildRequires:  mesa-common-devel
+BuildRequires:	ocaml-findlib
 
 %description
 OCaml interface to the GIMP Tool Kit Version 2.
