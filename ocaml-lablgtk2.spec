@@ -60,7 +60,7 @@ make opt
 %install
 rm -rf %{buildroot}
 export DESTDIR=%{buildroot}
-export OCAMLFIND_DESTDIR=%{buildroot}%{_libdir}/ocmal
+export OCAMLFIND_DESTDIR=%{buildroot}%{_libdir}/ocaml
 install -d -m 755 %{buildroot}/%{_bindir}
 install -d -m 755 %{buildroot}/%{_libdir}/ocaml/stublibs
 install -d -m 755 %{buildroot}/%{_libdir}/ocaml/lablgtk2/
