@@ -61,20 +61,13 @@ make opt
 rm -rf %{buildroot}
 export DESTDIR=%{buildroot}
 export OCAMLFIND_DESTDIR=%{buildroot}%{_libdir}/ocaml
-install -d -m 755 %{buildroot}/%{_bindir}
 install -d -m 755 %{buildroot}/%{_libdir}/ocaml/stublibs
-install -d -m 755 %{buildroot}/%{_libdir}/ocaml/lablgtk2/
-install -m 644 META %{buildroot}/%{_libdir}/ocaml/lablgtk2/
 make install \
 	RANLIB=true \
 	BINDIR=%{buildroot}/%{_bindir} \
 	LIBDIR=%{buildroot}/%{_libdir}/ocaml/lablgtk2 \
 	INSTALLDIR=%{buildroot}/%{_libdir}/ocaml/lablgtk2 \
 	DLLDIR=%{buildroot}/%{_libdir}/ocaml/stublibs
-
-for cmo in $(find src/ -type f -name "*.cmo"); do
-	%{__install} -m0644 -D $cmo %{buildroot}/%{_libdir}/ocaml/lablgtk2/`basename $cmo`
-done;
 
 %clean
 rm -rf %{buildroot}
