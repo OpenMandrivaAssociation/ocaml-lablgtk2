@@ -2,7 +2,7 @@
 
 Name:		ocaml-%{base_name}2
 Version:	2.16.0
-Release:	4
+Release:	5
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
 Source0:	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.gz
 Source1:	lablgtk-2.14.0-doc-html.tar.lzma
@@ -30,7 +30,7 @@ OCaml interface to the GIMP Tool Kit Version 2.
 Summary:	Development files for %{name}
 Group:		Development/Other
 Requires:	%{name} = %{version}-%{release}
-Requires:	gtk2-devel
+Requires:	pkgconfig(gtk+-2.0)
 
 %description devel
 This package contains the development files needed to build applications
