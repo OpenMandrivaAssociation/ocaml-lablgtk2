@@ -3,7 +3,7 @@
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
 Name:		ocaml-%{base_name}2
 Version:	2.18.0
-Release:	1
+Release:	2
 License:	LGPLv2.1+
 Group:		Development/Other
 Url:		http://lablgtk.forge.ocamlcore.org/
@@ -99,5 +99,9 @@ make install \
 	LIBDIR=%{buildroot}/%{_libdir}/ocaml/lablgtk2 \
 	INSTALLDIR=%{buildroot}/%{_libdir}/ocaml/lablgtk2 \
 	DLLDIR=%{buildroot}/%{_libdir}/ocaml/stublibs
+
+for cmo in $(find src/ -type f -name "*.cmo"); do
+    %{__install} -m0644 -D $cmo %{buildroot}/%{_libdir}/ocaml/lablgtk2/`basename $cmo`
+done;
 
 rm -f %{buildroot}%{_libdir}/ocaml/ld.conf
