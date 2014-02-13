@@ -12,7 +12,9 @@ Source1:	lablgtk-2.14.0-doc-html.tar.lzma
 BuildRequires:	camlp4
 BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-lablgl-devel
+BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:	pkgconfig(gl)
+BuildRequires:	pkgconfig(glu)
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gtkgl-2.0)
 BuildRequires:	pkgconfig(gtksourceview-1.0)
@@ -23,6 +25,7 @@ BuildRequires:	pkgconfig(libgnomeui-2.0)
 BuildRequires:	pkgconfig(libpanelapplet-4.0)
 BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(pango)
+BuildRequires:	pkgconfig(pangocairo)
 
 %description
 OCaml interface to the GIMP Tool Kit Version 2.
