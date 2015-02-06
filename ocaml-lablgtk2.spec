@@ -3,7 +3,7 @@
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
 Name:		ocaml-%{base_name}2
 Version:	2.18.0
-Release:	2
+Release:	3
 License:	LGPLv2.1+
 Group:		Development/Other
 Url:		http://lablgtk.forge.ocamlcore.org/
