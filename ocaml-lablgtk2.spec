@@ -2,8 +2,8 @@
 
 Summary:	OCaml interface to the GIMP Tool Kit Version 2
 Name:		ocaml-%{base_name}2
-Version:	2.18.0
-Release:	4
+Version:	2.18.4
+Release:	1
 License:	LGPLv2.1+
 Group:		Development/Other
 Url:		http://lablgtk.forge.ocamlcore.org/
@@ -22,7 +22,6 @@ BuildRequires:	pkgconfig(gtksourceview-2.0)
 BuildRequires:	pkgconfig(gtkspell-2.0)
 BuildRequires:	pkgconfig(libglade-2.0)
 BuildRequires:	pkgconfig(libgnomeui-2.0)
-BuildRequires:	pkgconfig(libpanelapplet-4.0)
 BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(pango)
 BuildRequires:	pkgconfig(pangocairo)
