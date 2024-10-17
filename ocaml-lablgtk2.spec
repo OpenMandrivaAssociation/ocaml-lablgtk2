@@ -6,7 +6,7 @@ Version:	2.18.4
 Release:	1
 License:	LGPLv2.1+
 Group:		Development/Other
-Url:		http://lablgtk.forge.ocamlcore.org/
+Url:		https://lablgtk.forge.ocamlcore.org/
 Source0:	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.gz
 Source1:	lablgtk-2.14.0-doc-html.tar.lzma
 BuildRequires:	camlp4
