@@ -9,6 +9,11 @@ Group:		Development/Other
 Url:		https://lablgtk.forge.ocamlcore.org/
 Source0:	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/%{base_name}-%{version}.tar.gz
 Source1:	lablgtk-2.14.0-doc-html.tar.lzma
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	camlp4
 BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-lablgl-devel
